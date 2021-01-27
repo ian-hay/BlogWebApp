@@ -1,0 +1,15 @@
+.mysect{
+  margin-left: 25%;
+}
+.othersect{
+  margin-right: 25%;
+}
+.sizes{
+    width: 200px;
+
+}
+
+.card-body .cardfix{
+    padding-left: 35px;
+    color: green;
+}
