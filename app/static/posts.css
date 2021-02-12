@@ -1,15 +1,22 @@
 .mysect{
-  margin-left: 25%;
+ margin-left: 15%;
 }
 .othersect{
   margin-right: 25%;
 }
-.sizes{
-    width: 200px;
 
+.post-user-photo{
+    margin-left: 5%;
 }
 
-.card-body .cardfix{
-    padding-left: 35px;
-    color: green;
+.post-position{
+    margin-left: 30%;
+    margin-right: 30%;
 }
+
+.post-user-photo-position{
+    margin-left: 2%;
+    margin-top:  2%;
+}
+
+

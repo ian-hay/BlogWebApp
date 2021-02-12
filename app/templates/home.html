@@ -2,19 +2,28 @@
 {% block content %}
     {% for post in posts.items %}
 
-        <div class="card text-white bg-dark mb-2 mysect w-100 ">
+        <div class="card text-white bg-dark mb-2 post-position">
             <div class="ps-3 pt-3">
-                <a href="{{ url_for('users.user_posts', username=post.author.username) }}"><img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}"></a>
+                <div>
+                    <a class="post-user-photo-position" href="{{ url_for('users.user_posts', username=post.author.username) }}"><img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}"></a>
 
-                <small class="">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+
+
+                        <a class="m-1" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+                        <small class="m-1">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+                </div>
+                    <div class="">
+                        <blockquote class="blockquote mb-0">
+                            <p class="article-content">{{ post.content }}</p>
+                            <footer class="blockquote-footer"><a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a></footer>
+                        </blockquote>
+                    </div>
+                </div>
             </div>
-            <div class="card-body px-5">
-                <blockquote class="blockquote mb-0">
-                    <p class="article-content">{{ post.content }}</p>
-                    <footer class="blockquote-footer"><a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a></footer>
-                </blockquote>
-            </div>
-        </div>
+
+
+
+
     {% endfor %}
 
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
